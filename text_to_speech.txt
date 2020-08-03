@@ -1,0 +1,17 @@
+REM Voice over Powershell!
+DELAY 2000
+WINDOWS r
+DELAY 500
+STRING Powershell -windowstyle hidden -Command "Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('your text');" exit;
+ENTER
+DELAY 500
+WINDOWS r
+DELAY 500
+STRING notepad.exe
+ENTER
+DELAY 500
+STRING #####################
+ENTER
+STRING HACKED;HACKED;HACKED#
+ENTER
+STRING #####################

