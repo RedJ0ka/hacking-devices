@@ -1,0 +1,59 @@
+DELAY 3000
+GUI r
+DELAY 200
+STRING powershell -windowstyle hidden
+ENTER
+DELAY 400
+STRING [console]::beep(440,500)
+ENTER
+DELAY 200
+STRING [console]::beep(440,500)
+ENTER
+DELAY 200
+STRING [console]::beep(440,500)
+ENTER
+DELAY 200
+STRING [console]::beep(349,350)
+ENTER
+DELAY 150
+STRING [console]::beep(523,150)
+ENTER
+DELAY 70
+STRING [console]::beep(440,500)
+ENTER
+DELAY 200
+STRING [console]::beep(349,350)
+ENTER
+DELAY 150
+STRING [console]::beep(523,150)
+ENTER
+DELAY 70
+STRING [console]::beep(440,1000)
+ENTER
+DELAY 500
+STRING [console]::beep(659,500)
+ENTER
+DELAY 200
+STRING [console]::beep(659,500)
+ENTER
+DELAY 200
+STRING [console]::beep(659,500)
+ENTER
+DELAY 200
+STRING [console]::beep(698,350)
+ENTER
+DELAY 150
+STRING [console]::beep(523,150)
+ENTER
+DELAY 70
+STRING [console]::beep(415,500)
+ENTER
+DELAY 200
+STRING [console]::beep(349,350)
+ENTER
+DELAY 150
+STRING [console]::beep(523,150)
+ENTER
+DELAY 70
+STRING [console]::beep(440,1000)
+ENTER
